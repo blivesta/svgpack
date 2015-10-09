@@ -22,7 +22,7 @@ $ npm install flexicon-generator
     |-- icon1.svg
     |-- icon2.svg
     |-- icon3.svg
-    |-- icon3.svg
+    |-- icon4.svg
 ```
 
 2.Create `flexicon-generator.js`

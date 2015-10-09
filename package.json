@@ -15,8 +15,8 @@
   "license": "MIT",
   "scripts": {
     "serve":"http-server ./test/~build -o",
-    "test":"node ./test/index.js",
-    "start": "npm run test && npm run serve"
+    "generate:test":"node ./test/index.js",
+    "start": "npm run generate:test && npm run serve"
   },
   "dependencies": {
     "datauri": "^0.8.0",
