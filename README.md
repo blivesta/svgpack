@@ -99,7 +99,7 @@ gulp.task('default',function(){
 
 ## Contributing
 
-To contribute to animsition, clone this repo locally and commit your code.  
+To contribute to flexicon-generator, clone this repo locally and commit your code.  
 Please check that everything works before opening a pull-request.
 
 
