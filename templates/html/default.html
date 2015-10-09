@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>flexicon-generator: <%= options.name %></title>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/sircus/sircus/master/dist/sircus.min.css" charset="utf-8" />
+  <style media="screen">
+  <%= cssInject %>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  a,
+  a:hover {
+    color:#000;
+  }
+  body {
+    counter-reset: Card;
+  }
+
+  .Button {
+    color:#000;
+  }
+  .Button:hover {
+    background:none;
+    text-decoration: underline;
+  }
+
+  .Card h4:before {
+    content: counter(Card) ': ';
+    counter-increment: Card;
+  }
+
+  </style>
+</head>
+<body>
+<%= svgInject %>
+
+<header class="t-mbXl t-gutter">
+  <div class="t-clear" style="border-bottom:3px solid #000;">
+    <div class="t-pullLeft">
+      <h1 class="t-mb0">Flexicon</h1>
+      <ul class="ListInline t-mbXs">
+        <li>
+          <small>
+            Created by
+            <svg width="64" height="64" class="<%= options.prefix %>">
+              <use xlink:href="#<%= options.prefix %>-blivesta" />
+            </svg>
+            <a href="http://www.blivesta.com" target="_blank">
+            blivesta
+          </a>
+          </small>
+        </li>
+        <li>
+          <a href="https://github.com/blivesta/flexicon" target="_blank">
+            <small>GitHub</small>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+
+<main>
+
+  <section class="Grid">
+
+    <% _.each(icons, function(icon) { %>
+    <div class="Card Grid-col t-widthHalf t-sm-width1of4 t-lg-width1of6 t-mbXl">
+
+      <div class="t-center t-width1of3">
+        <svg width="64" height="64" class="<%= options.prefix %> <%= options.prefix %>--Full"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>" /></svg>
+      </div>
+
+      <h4 class="t-pbTn t-mbTn" style="border-bottom:2px solid #000"><%= icon.name %></h4>
+
+      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><path d='<%= icon.path %>'/></svg>
+  ' /></svg>">svg</button>
+      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg class='<%= options.prefix %>'><use xlink:href='#<%= options.prefix %>-<%= icon.name %>' /></svg>">use</button>
+      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<img src='<%= icon.base64 %>'/>">img</button>
+      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="url('<%= icon.base64 %>')">css</button>
+
+    </div>
+    <% }) %>
+
+  </section>
+
+</main>
+
+
+<footer class="t-mbXl t-gutter">
+  <div style="border-top:2px solid #000;">
+    <p class="H5 t-mbXl t-mtXs">
+      Code Licensed Under The MIT.
+    </p>
+  </div>
+</footer>
+
+
+<!-- <div id="js-alert" class="Alert t-none">
+  <p>copied</p>
+</div> -->
+
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.5/ZeroClipboard.min.js"></script>
+<script type="text/javascript">
+
+var btn = document.querySelectorAll('.js-clip');
+var clip = new ZeroClipboard(btn);
+// var alert = document.getElementById('js-alert');
+
+// clip.on('copy', function(event) {
+  // alert.classList.remove('t-none');
+  // setTimeout(function() {
+  //   alert.classList.add('t-none');
+  // }, 1000);
+// });
+
+</script>
+</body>
+</html>

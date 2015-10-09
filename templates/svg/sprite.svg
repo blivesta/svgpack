@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <% _.each(icons, function(icon) { %>
+  <symbol id="<%= config.prefix %>-<%= icon.name %>" viewBox="<%= icon.viewBox %>">
+    <g>
+      <% _.each(icon.path, function(path) { %>
+      <path d="<%= path.d %>"/>
+      <% }) %>
+    </g>
+  </symbol>
+  <% }) %>
+</svg>

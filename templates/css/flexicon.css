@@ -1,0 +1,52 @@
+.<%= prefix %> {
+  display:inline-block;
+  width: 100%;
+  height: auto;
+}
+
+.<%= prefix %>--2x,
+.<%= prefix %>--3x,
+.<%= prefix %>--4x,
+.<%= prefix %>--Full {
+  vertical-align:middle;
+}
+
+.<%= prefix %> {
+  width: 1em;
+  height: 1em;
+  vertical-align: text-bottom;
+}
+
+.<%= prefix %>--2x {
+  width: 2em;
+  height: 2em;
+}
+
+.<%= prefix %>--3x {
+  width: 3em;
+  height: 3em;
+}
+
+.<%= prefix %>--4x {
+  width: 4em;
+  height: 4em;
+}
+
+.<%= prefix %>--Full {
+  width: 100%;
+  height: auto;
+}
+
+
+.<%= prefix %>--round {
+  border-radius: 4px;
+}
+.<%= prefix %>--circle {
+  border-radius: 50%;
+}
+.<%= prefix %>--fill {
+  background-color: #ccc;
+}
+.<%= prefix %>--border {
+  border:1px solid #ccc;
+}
