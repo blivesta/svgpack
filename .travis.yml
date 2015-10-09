@@ -2,8 +2,6 @@ sudo: false
 language: node_js
 node_js:
   - 0.12
-script:
-  - npm run test
 notifications:
   slack: blivesta:ygWmRLL4fyU0s7FFlVHSsJnS
   email: false
