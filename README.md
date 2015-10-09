@@ -27,7 +27,7 @@ $ npm install flexicon-generator
 
 2.Create `flexicon-generator.js`
 ```js
-var FlexiconGenerator = require('flexicon')
+var FlexiconGenerator = require('flexicon-generator')
 
 FlexiconGenerator = new FlexiconGenerator('./svg/*.svg', {
   // options...
@@ -70,7 +70,7 @@ if you are using gulp
 
 ```js
 var gulp = require('gulp')
-var flexiconGenerator = require('flexicon')
+var flexiconGenerator = require('flexicon-generator')
 
 gulp.task('default',function(){
   return flexiconGenerator('./svg/*.svg', {
