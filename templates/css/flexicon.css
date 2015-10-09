@@ -8,7 +8,7 @@
 .<%= prefix %>--2x,
 .<%= prefix %>--3x,
 .<%= prefix %>--4x,
-.<%= prefix %>--Full {
+.<%= prefix %>--full {
   vertical-align:middle;
 }
 
@@ -27,7 +27,7 @@
   height: 4em;
 }
 
-.<%= prefix %>--Full {
+.<%= prefix %>--full {
   width: 100%;
   height: auto;
 }
