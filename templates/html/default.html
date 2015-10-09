@@ -77,8 +77,7 @@
 
       <h4 class="t-pbTn t-mbTn" style="border-bottom:2px solid #000"><%= icon.name %></h4>
 
-      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><path d='<%= icon.path %>'/></svg>
-  ' /></svg>">svg</button>
+      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/></svg><% }) %>">svg</button>
       <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg class='<%= options.prefix %>'><use xlink:href='#<%= options.prefix %>-<%= icon.name %>' /></svg>">use</button>
       <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<img src='<%= icon.base64 %>'/>">img</button>
       <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="url('<%= icon.base64 %>')">css</button>
