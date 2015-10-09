@@ -1,7 +1,8 @@
 .<%= prefix %> {
   display:inline-block;
-  width: 100%;
-  height: auto;
+  width: 1em;
+  height: 1em;
+  vertical-align: text-bottom;
 }
 
 .<%= prefix %>--2x,
@@ -9,12 +10,6 @@
 .<%= prefix %>--4x,
 .<%= prefix %>--Full {
   vertical-align:middle;
-}
-
-.<%= prefix %> {
-  width: 1em;
-  height: 1em;
-  vertical-align: text-bottom;
 }
 
 .<%= prefix %>--2x {
