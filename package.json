@@ -1,6 +1,6 @@
 {
   "name": "flexicon-generator",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "homepage": "https://github.com/blivesta/flexicon-generator",
   "description": "A Simple SVG Sprite Generator That Using a Nodejs.",
   "main": "index.js",
