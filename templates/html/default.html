@@ -4,34 +4,30 @@
   <meta charset="utf-8">
   <title>flexicon-generator: <%= options.name %></title>
   <link rel="stylesheet" href="https://cdn.rawgit.com/sircus/sircus/master/dist/sircus.min.css" charset="utf-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.core.min.css" charset="utf-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.default.min.css" charset="utf-8" />
   <style media="screen">
   <%= cssInject %>
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  a,
-  a:hover {
-    color:#000;
-  }
+  /* flexicon-generator default template style */
   body {
     counter-reset: Card;
   }
-
+  a,
   .Button {
     color:#000;
   }
-  .Button:hover {
-    background:none;
+  .Button:hover,
+  .Button:focus {
+    background-color:transparent;
     text-decoration: underline;
   }
-
   .Card h4:before {
     content: counter(Card) ': ';
     counter-increment: Card;
   }
-
+  .alertify-logs {
+    font-weight: bold;
+  }
   </style>
 </head>
 <body>
@@ -65,30 +61,21 @@
 
 
 <main>
-
   <section class="Grid">
-
     <% _.each(icons, function(icon) { %>
     <div class="Card Grid-col t-widthHalf t-sm-width1of4 t-lg-width1of6 t-mbXl">
-
       <div class="t-center t-width1of3">
         <svg width="64" height="64" class="<%= options.prefix %> <%= options.prefix %>--full"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>" /></svg>
       </div>
-
       <h4 class="t-pbTn t-mbTn" style="border-bottom:2px solid #000"><%= icon.name %></h4>
-
-      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/></svg><% }) %>">svg</button>
+      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/><% }) %></svg>">svg</button>
       <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg class='<%= options.prefix %>'><use xlink:href='#<%= options.prefix %>-<%= icon.name %>' /></svg>">use</button>
       <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<img src='<%= icon.base64 %>'/>">img</button>
-      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="url('<%= icon.base64 %>')">css</button>
-
+      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="url('<%= icon.base64 %>');">css</button>
     </div>
     <% }) %>
-
   </section>
-
 </main>
-
 
 <footer class="t-mbXl t-gutter">
   <div style="border-top:2px solid #000;">
@@ -98,26 +85,14 @@
   </div>
 </footer>
 
-
-<!-- <div id="js-alert" class="Alert t-none">
-  <p>copied</p>
-</div> -->
-
-
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.5/ZeroClipboard.min.js"></script>
 <script type="text/javascript">
-
-var btn = document.querySelectorAll('.js-clip');
-var clip = new ZeroClipboard(btn);
-// var alert = document.getElementById('js-alert');
-
-// clip.on('copy', function(event) {
-  // alert.classList.remove('t-none');
-  // setTimeout(function() {
-  //   alert.classList.add('t-none');
-  // }, 1000);
-// });
-
+  var btn = document.querySelectorAll('.js-clip');
+  var clip = new ZeroClipboard(btn);
+  clip.on('aftercopy', function(event) {
+    alertify.log('Code Cliped!').show();
+  });
 </script>
 </body>
 </html>
