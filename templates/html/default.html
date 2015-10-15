@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>flexicon-generator: <%= options.name %></title>
+  <title><%= options.name %></title>
   <link rel="stylesheet" href="https://cdn.rawgit.com/sircus/sircus/master/dist/sircus.min.css" charset="utf-8" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.core.min.css" charset="utf-8" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.default.min.css" charset="utf-8" />
@@ -36,25 +36,7 @@
 <header class="t-mbXl t-gutter">
   <div class="t-clear" style="border-bottom:3px solid #000;">
     <div class="t-pullLeft">
-      <h1 class="t-mb0">Flexicon</h1>
-      <ul class="ListInline t-mbXs">
-        <li>
-          <small>
-            Created by
-            <svg width="64" height="64" class="<%= options.prefix %>">
-              <use xlink:href="#<%= options.prefix %>-blivesta" />
-            </svg>
-            <a href="http://www.blivesta.com" target="_blank">
-            blivesta
-          </a>
-          </small>
-        </li>
-        <li>
-          <a href="https://github.com/blivesta/flexicon" target="_blank">
-            <small>GitHub</small>
-          </a>
-        </li>
-      </ul>
+      <h1 class=""><%= options.name %></h1>
     </div>
   </div>
 </header>
@@ -63,15 +45,15 @@
 <main>
   <section class="Grid">
     <% _.each(icons, function(icon) { %>
-    <div class="Card Grid-col t-widthHalf t-sm-width1of4 t-lg-width1of6 t-mbXl">
+    <div class="Card Grid-col t-widthHalf t-sm-width1of3 t-lg-width1of5 t-mbXl">
       <div class="t-center t-width1of3">
         <svg width="64" height="64" class="<%= options.prefix %> <%= options.prefix %>--full"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>" /></svg>
       </div>
       <h4 class="t-pbTn t-mbTn" style="border-bottom:2px solid #000"><%= icon.name %></h4>
-      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/><% }) %></svg>">svg</button>
-      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg class='<%= options.prefix %>'><use xlink:href='#<%= options.prefix %>-<%= icon.name %>' /></svg>">use</button>
-      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<img src='<%= icon.base64 %>'/>">img</button>
-      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="url('<%= icon.base64 %>');">css</button>
+      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/><% }) %></svg>">SVG</button>
+      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg class='<%= options.prefix %>'><use xlink:href='#<%= options.prefix %>-<%= icon.name %>' /></svg>">SPRITE</button>
+      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<img src='<%= icon.base64 %>'/>">IMG</button>
+      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="url('<%= icon.base64 %>');">CSS</button>
     </div>
     <% }) %>
   </section>
@@ -79,9 +61,27 @@
 
 <footer class="t-mbXl t-gutter">
   <div style="border-top:2px solid #000;">
-    <p class="H5 t-mbXl t-mtXs">
-      Code Licensed Under The MIT.
-    </p>
+    <ul class="ListInline t-mbXl t-mtXs">
+      <li>
+        <small>
+          Genereted by
+          <a href="https://github.com/blivesta/flexicon-generator" target="_blank">
+            flexicon-generator
+          </a>
+        </small>
+      </li>
+      <li>
+        <small>
+          Created by
+          <svg width="64" height="64" class="<%= options.prefix %>">
+            <use xlink:href="#<%= options.prefix %>-blivesta" />
+          </svg>
+          <a href="http://www.blivesta.com" target="_blank">
+          blivesta
+        </a>
+        </small>
+      </li>
+    </ul>
   </div>
 </footer>
 
