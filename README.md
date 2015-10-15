@@ -6,6 +6,9 @@
 
 > A Simple SVG Sprite Generator Using Node.js
 
+## Example
+- [Flexicon](https://github.com/blivesta/flexicon)
+
 
 ## Install
 
