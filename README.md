@@ -4,7 +4,8 @@
 [![Build Status](https://img.shields.io/travis/blivesta/flexicon-generator/master.svg?style=flat-square)](https://travis-ci.org/blivesta/flexicon-generator)
 
 
-> A Simple SVG Sprite Generator That Using a Nodejs.
+> A Simple SVG Sprite Generator Using Node.js
+
 
 ## Install
 
