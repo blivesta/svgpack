@@ -1,1 +1,1 @@
-module.exports = require('./lib/flexicon-generator')
+module.exports = require('./lib/svgpack')

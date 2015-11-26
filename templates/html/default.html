@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.default.min.css" charset="utf-8" />
   <style media="screen">
   <%= cssInject %>
-  /* flexicon-generator default template style */
+  /* SVGpack default template style */
   body {
     counter-reset: Card;
   }
@@ -45,7 +45,7 @@
 <main>
   <section class="Grid">
     <% _.each(icons, function(icon) { %>
-    <div class="Card Grid-col t-widthHalf t-sm-width1of3 t-lg-width1of5 t-mbXl">
+    <div class="Card Grid-col t-widthHalf t-sm-width4of12 t-lg-width2of10 t-mbXl">
       <div class="t-center t-width1of3">
         <svg width="64" height="64" class="<%= options.prefix %> <%= options.prefix %>--full"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>" /></svg>
       </div>
@@ -65,20 +65,9 @@
       <li>
         <small>
           Genereted by
-          <a href="https://github.com/blivesta/flexicon-generator" target="_blank">
-            flexicon-generator
+          <a href="https://github.com/blivesta/svgpack" target="_blank">
+            svgpack
           </a>
-        </small>
-      </li>
-      <li>
-        <small>
-          Created by
-          <svg width="64" height="64" class="<%= options.prefix %>">
-            <use xlink:href="#<%= options.prefix %>-blivesta" />
-          </svg>
-          <a href="http://www.blivesta.com" target="_blank">
-          blivesta
-        </a>
         </small>
       </li>
     </ul>

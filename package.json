@@ -1,12 +1,12 @@
 {
-  "name": "flexicon-generator",
+  "name": "svgpack",
   "version": "0.0.3",
-  "homepage": "https://github.com/blivesta/flexicon-generator",
-  "description": "A Simple SVG Sprite Generator Using Node.js.",
+  "homepage": "https://github.com/blivesta/svgpack",
+  "description": "SVG sprite generator and create a page for a preview and code copy.",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:blivesta/flexicon-generator.git"
+    "url": "git@github.com:blivesta/svgpack.git"
   },
   "author": {
     "name": "blivesta",
