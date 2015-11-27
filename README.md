@@ -7,7 +7,7 @@
 > Generator for SVG sprite and icons preview.
 
 ## Example
-- [svgpack](https://github.com/blivesta/svgpack)
+- [flexicon](https://github.com/blivesta/flexicon)
 
 
 ## Install
