@@ -2,7 +2,7 @@
   "name": "svgpack",
   "version": "0.0.3",
   "homepage": "https://github.com/blivesta/svgpack",
-  "description": "SVG sprite generator and create a page for a preview and code copy.",
+  "description": "Generator for SVG sprite and icons preview.",
   "main": "index.js",
   "repository": {
     "type": "git",
