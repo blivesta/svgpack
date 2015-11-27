@@ -8,7 +8,7 @@ test('file check', function (t) {
 
   Svgpack = new Svgpack(input, {
     name: 'test',
-    prefix: 'te',
+    prefix: 'icon',
     dist:'./test/~build',
     templates: {
       sprite:'./templates/svg/sprite.svg',
