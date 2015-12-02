@@ -7,7 +7,6 @@ test('file check', function (t) {
   var input = './test/fixtures/*.svg'
 
   Svgpack = new Svgpack(input, {
-    name: 'test',
     prefix: 'icon',
     dist:'./test/~build',
     templates: {
