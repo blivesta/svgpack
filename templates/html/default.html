@@ -2,86 +2,222 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title><%= options.name %></title>
-  <link rel="stylesheet" href="https://cdn.rawgit.com/sircus/sircus/master/dist/sircus.min.css" charset="utf-8" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.core.min.css" charset="utf-8" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.default.min.css" charset="utf-8" />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" charset="utf-8">
+  <!-- sircus v2.0.0 -->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/sircus/sircus/b942b5c0930d5a26e9d2233b694d216ee9876a3e/dist/sircus.min.css" charset="utf-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.6/remodal.min.css" charset="utf-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.6/remodal-default-theme.min.css" charset="utf-8" />
   <style media="screen">
-  <%= cssInject %>
-  /* SVGpack default template style */
-  body {
-    counter-reset: Card;
-  }
-  a,
-  .Button {
-    color:#000;
-  }
-  .Button:hover,
-  .Button:focus {
-    background-color:transparent;
-    text-decoration: underline;
-  }
-  .Card h4:before {
-    content: counter(Card) ': ';
-    counter-increment: Card;
-  }
-  .alertify-logs {
-    font-weight: bold;
-  }
+    <%= cssInject %>
+    /* SVGPack default template style */
+    body {
+      counter-reset: card;
+      font-family: 'Roboto', sans-serif;
+    }
+    a,
+    .btn {
+      color: #000;
+    }
+    a:hover,
+    a:focus,
+    .btn:hover,
+    .btn:focus {
+      text-decoration: none;
+      color: rgba(0,0,0,.6);
+    }
+    .card .card-title:before {
+      content: counter(card) ': ';
+      counter-increment: card;
+      font-weight: bold;
+    }
+    .btn {
+      background-color: #fafafa;
+      letter-spacing: .2em;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+      width: 200px;
+    }
   </style>
 </head>
 <body>
 <%= svgInject %>
 
-<header class="t-mbXl t-gutter">
-  <div class="t-clear" style="border-bottom:3px solid #000;">
-    <div class="t-pullLeft">
-      <h1 class=""><%= options.name %></h1>
+<header class="t-mbXl t-gutter t-alignCenter">
+  <h1 class="t-capitalize t-fontGt"><%= options.name %></h1>
+  <a class="btn Button Button--reset" href="#modal-sprite">SVG Sprite</a>
+  <a class="btn Button Button--reset" href="#modal-css">CSS</a>
+  <a class="btn Button Button--reset" href="#modal-style">style</a>
+  <button type="button" class="btn Button Button--reset js-toggle"></button>
+
+  <div class="remodal" data-remodal-id="modal-style" role="dialog">
+    <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+    <div class="Grid">
+      <div class="Grid-col t-widthFull">
+        <h2>Style</h2>
+      </div>
+      <p class="Grid-col t-width4of12">
+        <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--fill"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> fill
+      </p>
+      <p class="Grid-col t-width4of12">
+        <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--fill <%= options.prefix %>--round"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> fill &amp; round
+      </p>
+      <p class="Grid-col t-width4of12">
+        <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--fill <%= options.prefix %>--circle"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> fill &amp; circle
+      </p>
+      <p class="Grid-col t-width4of12">
+        <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--border <%= options.prefix %>--circle"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> border &amp; circle
+      </p>
+      <p class="Grid-col t-width4of12">
+        <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--border <%= options.prefix %>--round"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> border &amp; round
+      </p>
+
+      <div class="Grid-col t-widthFull">
+        <h2>Size</h2>
+      </div>
+      <p class="Grid-col t-width3of12">
+        <svg viewBox="0 0 64 64"  class="<%= options.prefix %>"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> base
+      </p>
+      <p class="Grid-col t-width3of12">
+        <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--2x"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> 2x
+      </p>
+      <p class="Grid-col t-width3of12">
+        <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--3x"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> 3x
+      </p>
+      <p class="Grid-col t-width3of12">
+        <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--4x"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> 4x
+      </p>
+      <p class="Grid-col t-widthFull">
+        <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--full"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg>
+        full
+      </p>
     </div>
+  </div>
+
+  <div class="remodal" data-remodal-id="modal-css" role="dialog">
+    <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+    <h2 class="t-alignLeft t-gutter">CSS for <%= options.prefix %></h2>
+    <textarea class="Textarea" rows="10"><%= cssInject %></textarea>
+  </div>
+
+  <div class="remodal" data-remodal-id="modal-sprite" role="dialog">
+    <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+    <h2 class="t-alignLeft t-gutter">SVG Sprite for <%= options.prefix %></h2>
+    <textarea class="Textarea" rows="10"><%= svgInject %></textarea>
   </div>
 </header>
 
 
-<main>
-  <section class="Grid">
+<main class="t-gutter">
+  <section class="Grid t-alignCenter">
     <% _.each(icons, function(icon) { %>
-    <div class="Card Grid-col t-widthHalf t-sm-width4of12 t-lg-width2of10 t-mbXl">
-      <div class="t-center t-width4of12">
-        <svg width="64" height="64" class="<%= options.prefix %> <%= options.prefix %>--full"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>" /></svg>
+    <a class="card Grid-col t-widthHalf t-sm-width3of12 t-lg-width1of10 t-mbXl t-alignCenter" href="#modal-<%= icon.name %>">
+      <svg width="64" height="64" class="<%= options.prefix %>"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>" /></svg>
+      <span class="card-title"><%= options.prefix %>-<%= icon.name %></span>
+    </a>
+
+    <div class="remodal" data-remodal-id="modal-<%= icon.name %>" role="dialog">
+      <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+
+      <div class="Grid Grid--middle">
+
+        <div class="Grid-col t-width4of12">
+          <p>
+            <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--full"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>"></use></svg>
+          </p>
+        </div>
+        <div class="Grid-col t-width8of12">
+          <h1 class="t-mt0"><%= icon.name %></h1>
+        </div>
+
+        <div class="Grid-col t-width4of12">
+          <p class="t-bold">SVG Sprite &lt;use&gt;</p>
+        </div>
+        <div class="Grid-col t-width8of12">
+          <p>
+            <input type="text" class="Input" value="<svg viewBox='0 0 64 64' class='<%= options.prefix %>'><use xlink:href='#<%= options.prefix %>-<%= icon.name %>'></use></svg>">
+          </p>
+        </div>
+        <div class="Grid-col t-width4of12">
+          <p class="t-bold">SVG</p>
+        </div>
+        <div class="Grid-col t-width8of12">
+          <p>
+            <input type="text"class="Input" value="<svg width='64' height='64' class='<%= options.prefix %> <%= options.prefix %>-<%= icon.name %>' viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/><% }) %></svg>">
+          </p>
+        </div>
+        <div class="Grid-col t-width4of12">
+          <p class="t-bold">img</p>
+        </div>
+        <div class="Grid-col t-width8of12">
+          <p>
+            <input type="text"class="Input" value="<img src='<%= icon.base64 %>'/>">
+          </p>
+        </div>
+        <div class="Grid-col t-width4of12">
+          <p class="t-bold">CSS background-image</p>
+        </div>
+        <div class="Grid-col t-width8of12">
+          <p>
+            <input type="text"class="Input" value="url('<%= icon.base64 %>');">
+          </p>
+        </div>
       </div>
-      <h4 class="t-pbTn t-mbTn" style="border-bottom:2px solid #000"><%= icon.name %></h4>
-      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/><% }) %></svg>">SVG</button>
-      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<svg class='<%= options.prefix %>'><use xlink:href='#<%= options.prefix %>-<%= icon.name %>' /></svg>">SPRITE</button>
-      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="<img src='<%= icon.base64 %>'/>">IMG</button>
-      <button class="js-clip Button Button--sm Button--reset" data-clipboard-text="url('<%= icon.base64 %>');">CSS</button>
     </div>
+
     <% }) %>
   </section>
 </main>
 
-<footer class="t-mbXl t-gutter">
-  <div style="border-top:2px solid #000;">
+<footer class="t-mbXl t-gutter t-alignCenter">
+  <div>
     <ul class="ListInline t-mbXl t-mtXs">
       <li>
         <small>
-          Genereted by
-          <a href="https://github.com/blivesta/svgpack" target="_blank">
-            svgpack
-          </a>
+          Genereted by <a href="https://github.com/blivesta/svgpack" target="_blank">SVGPack</a>
         </small>
       </li>
     </ul>
   </div>
 </footer>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.min.js"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/zeroclipboard/2.1.5/ZeroClipboard.min.js"></script>
-<script type="text/javascript">
-  var btn = document.querySelectorAll('.js-clip');
-  var clip = new ZeroClipboard(btn);
-  clip.on('aftercopy', function(event) {
-    alertify.log('Code Cliped!').show();
-  });
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.6/remodal.min.js"></script>
+<script>
+$(document).on('ready', function(){
+
+  var largeIcons = true
+  var $icon = $('.card').children('svg')
+  var defaultClass = '<%= options.prefix %>'
+  var largeClass = defaultClass + ' <%= options.prefix %>--full t-mbSm'
+  var $toggle = $('.js-toggle')
+
+  if (largeIcons) {
+    $toggle.text('Default size')
+    $icon.attr('class', largeClass)
+  } else {
+    $toggle.text('Full size')
+  }
+
+  $toggle.on('click', function(event) {
+    if (largeIcons) {
+
+      $toggle.text('Full size')
+      $icon.attr('class', defaultClass)
+      return largeIcons = false
+
+    } else {
+
+      $toggle.text('Default size')
+      $icon.attr('class', largeClass)
+      return largeIcons = true
+
+    }
+  })
+
+})
 </script>
 </body>
 </html>
