@@ -1,15 +1,16 @@
 .<%= prefix %> {
   display:inline-block;
+  fill: currentColor;
+  margin-top: -0.2em;
   width: 1em;
   height: 1em;
-  vertical-align: text-bottom;
+  vertical-align:middle;
 }
 
 .<%= prefix %>--2x,
 .<%= prefix %>--3x,
-.<%= prefix %>--4x,
-.<%= prefix %>--full {
-  vertical-align:middle;
+.<%= prefix %>--4x {
+  margin-top: 0;
 }
 
 .<%= prefix %>--2x {
@@ -29,19 +30,22 @@
 
 .<%= prefix %>--full {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
+.<%= prefix %>--fill {
+  background-color: currentColor;
+  fill:#fff;
+}
 
 .<%= prefix %>--round {
   border-radius: 4px;
 }
+
 .<%= prefix %>--circle {
   border-radius: 50%;
 }
-.<%= prefix %>--fill {
-  background-color: #ccc;
-}
+
 .<%= prefix %>--border {
-  border:1px solid #ccc;
+  border:1px solid currentColor;
 }
