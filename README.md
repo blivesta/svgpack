@@ -77,9 +77,10 @@ $ node svgpack.js
   <link rel="stylesheet" href="svgpack.css">
 </head>
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> <symbol id="fi-blivesta" viewBox="0 0 64 64"><g> <path d="M35.094 0l-15.97 15.965 15.97 15.963-16.037 16.037L35.094 64H64V0H35.094zm14.5 54.812l-8.07-8.062 8.07-8.066 8.062 8.066-8.062 8.062zm0-29.777l-8.07-8.062 8.07-8.064 8.062 8.06-8.062 8.06z"/> </g></symbol></svg>
+  <!-- svgpack-sprite.svg -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> <symbol id="icon-blivesta" viewBox="0 0 64 64"><g> <path d="M35.094 0l-15.97 15.965 15.97 15.963-16.037 16.037L35.094 64H64V0H35.094zm14.5 54.812l-8.07-8.062 8.07-8.066 8.062 8.066-8.062 8.062zm0-29.777l-8.07-8.062 8.07-8.064 8.062 8.06-8.062 8.06z"/> </g></symbol></svg>
 
-  <svg class='fi'><use xlink:href='#fi-blivesta' /></svg>
+  <svg viewBox="0 0 64 64" class="icon"><use xlink:href="#icon-blivesta"></use></svg>
 
 </body>
 ```
@@ -90,7 +91,7 @@ if not use svg sprite.
   <link rel="stylesheet" href="svgpack.css">
 </head>
 <body>
-  <svg viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'><path d='M35.094 0l-15.97 15.965 15.97 15.963-16.037 16.037L35.094 64H64V0H35.094zm14.5 54.812l-8.07-8.062 8.07-8.066 8.062 8.066-8.062 8.062zm0-29.777l-8.07-8.062 8.07-8.064 8.062 8.06-8.062 8.06z'/></svg>
+  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M35.094 0l-15.97 15.965 15.97 15.963-16.037 16.037L35.094 64H64V0H35.094zm14.5 54.812l-8.07-8.062 8.07-8.066 8.062 8.066-8.062 8.062zm0-29.777l-8.07-8.062 8.07-8.064 8.062 8.06-8.062 8.06z"/></svg>
 </body>
 ```
 
