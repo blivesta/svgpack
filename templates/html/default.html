@@ -97,13 +97,13 @@
 
   <div class="remodal" data-remodal-id="modal-css" role="dialog">
     <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
-    <h2 class="t-alignLeft t-gutter">CSS for <%= options.prefix %></h2>
+    <h2 class="t-alignLeft t-gutter">CSS</h2>
     <textarea class="Textarea" rows="10"><%= cssInject %></textarea>
   </div>
 
   <div class="remodal" data-remodal-id="modal-sprite" role="dialog">
     <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
-    <h2 class="t-alignLeft t-gutter">SVG Sprite for <%= options.prefix %></h2>
+    <h2 class="t-alignLeft t-gutter">SVG Sprite</h2>
     <textarea class="Textarea" rows="10"><%= svgInject %></textarea>
   </div>
 </header>
@@ -116,22 +116,20 @@
       <div class="t-mbTn">
         <svg viewBox="0 0 64 64" class="<%= options.prefix %> <%= options.prefix %>--4x"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>"></use></svg>
       </div>
-      <%= options.prefix %>-<%= icon.name %>
+      <span class="card-title"><%= options.prefix %>-<%= icon.name %></span>
     </a>
 
     <div class="remodal" data-remodal-id="modal-<%= icon.name %>" role="dialog">
       <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
 
-      <div class="Grid Grid--middle t-mbLg">
-        <div class="Grid-col t-width4of12">
-          <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--full"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>"></use></svg>
-        </div>
-        <div class="Grid-col t-width8of12">
-          <h1 class="t-ma0"><%= icon.name %></h1>
-        </div>
-      </div>
-
       <div class="Grid Grid--middle">
+        <div class="Grid-col t-widthFull">
+          <p>
+            <svg viewBox="0 0 64 64" class="<%= options.prefix %>"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>"></use></svg>
+            <%= icon.name %>
+          </p>
+        </div>
+
         <div class="Grid-col t-width4of12">
           <p class="t-bold">SVG Sprite &lt;use&gt;</p>
         </div>
