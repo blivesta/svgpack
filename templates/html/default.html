@@ -45,12 +45,11 @@
 <body>
 <%= svgInject %>
 
-<header class="t-mbXl t-gutter t-alignCenter">
-  <h1 class="t-capitalize t-fontGt"><%= options.name %></h1>
+<header class="Container t-mbXl t-gutter t-alignCenter t-mbLg">
+  <h1 class="t-capitalize t-fontGt t-mbLg"><%= options.name %></h1>
   <a class="btn Button Button--reset" href="#modal-sprite">SVG Sprite</a>
   <a class="btn Button Button--reset" href="#modal-css">CSS</a>
   <a class="btn Button Button--reset" href="#modal-style">style</a>
-  <button type="button" class="btn Button Button--reset js-toggle"></button>
 
   <div class="remodal" data-remodal-id="modal-style" role="dialog">
     <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
@@ -65,7 +64,7 @@
         <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--fill <%= options.prefix %>--round"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> fill &amp; round
       </p>
       <p class="Grid-col t-width4of12">
-        <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--fill <%= options.prefix %>--circle"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> fill &amp; circle
+        <svg viewBox="0 0 64 64" class="<%= options.prefix %> <%= options.prefix %>--fill <%= options.prefix %>--circle"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> fill &amp; circle
       </p>
       <p class="Grid-col t-width4of12">
         <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--border <%= options.prefix %>--circle"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> border &amp; circle
@@ -89,7 +88,7 @@
       <p class="Grid-col t-width3of12">
         <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--4x"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg> 4x
       </p>
-      <p class="Grid-col t-widthFull">
+      <p class="Grid-col t-widthFull t-mtMd">
         <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--full"><use xlink:href="#<%= options.prefix %>-<%= icons[0].name %>"></use></svg>
         full
       </p>
@@ -110,28 +109,29 @@
 </header>
 
 
-<main class="t-gutter">
+<main class="Container t-gutter">
   <section class="Grid t-alignCenter">
     <% _.each(icons, function(icon) { %>
-    <a class="card Grid-col t-widthHalf t-sm-width3of12 t-lg-width1of10 t-mbXl t-alignCenter" href="#modal-<%= icon.name %>">
-      <svg width="64" height="64" class="<%= options.prefix %>"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>" /></svg>
-      <span class="card-title"><%= options.prefix %>-<%= icon.name %></span>
+    <a class="card Grid-col t-widthHalf t-sm-width3of12 t-lg-width2of12 t-mbXl t-alignCenter" href="#modal-<%= icon.name %>">
+      <div class="t-mbTn">
+        <svg viewBox="0 0 64 64" class="<%= options.prefix %> <%= options.prefix %>--4x"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>"></use></svg>
+      </div>
+      <%= options.prefix %>-<%= icon.name %>
     </a>
 
     <div class="remodal" data-remodal-id="modal-<%= icon.name %>" role="dialog">
       <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
 
-      <div class="Grid Grid--middle">
-
+      <div class="Grid Grid--middle t-mbLg">
         <div class="Grid-col t-width4of12">
-          <p>
-            <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--full"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>"></use></svg>
-          </p>
+          <svg viewBox="0 0 64 64"  class="<%= options.prefix %> <%= options.prefix %>--full"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>"></use></svg>
         </div>
         <div class="Grid-col t-width8of12">
-          <h1 class="t-mt0"><%= icon.name %></h1>
+          <h1 class="t-ma0"><%= icon.name %></h1>
         </div>
+      </div>
 
+      <div class="Grid Grid--middle">
         <div class="Grid-col t-width4of12">
           <p class="t-bold">SVG Sprite &lt;use&gt;</p>
         </div>
@@ -145,7 +145,7 @@
         </div>
         <div class="Grid-col t-width8of12">
           <p>
-            <input type="text"class="Input" value="<svg width='64' height='64' class='<%= options.prefix %> <%= options.prefix %>-<%= icon.name %>' viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/><% }) %></svg>">
+            <input type="text"class="Input" value="<svg viewBox='0 0 64 64' class='<%= options.prefix %> <%= options.prefix %>-<%= icon.name %>' viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/><% }) %></svg>">
           </p>
         </div>
         <div class="Grid-col t-width4of12">
@@ -171,7 +171,7 @@
   </section>
 </main>
 
-<footer class="t-mbXl t-gutter t-alignCenter">
+<footer class="Container t-mbXl t-gutter t-alignCenter">
   <div>
     <ul class="ListInline t-mbXl t-mtXs">
       <li>
@@ -185,39 +185,5 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.6/remodal.min.js"></script>
-<script>
-$(document).on('ready', function(){
-
-  var largeIcons = true
-  var $icon = $('.card').children('svg')
-  var defaultClass = '<%= options.prefix %>'
-  var largeClass = defaultClass + ' <%= options.prefix %>--full t-mbSm'
-  var $toggle = $('.js-toggle')
-
-  if (largeIcons) {
-    $toggle.text('Default size')
-    $icon.attr('class', largeClass)
-  } else {
-    $toggle.text('Full size')
-  }
-
-  $toggle.on('click', function(event) {
-    if (largeIcons) {
-
-      $toggle.text('Full size')
-      $icon.attr('class', defaultClass)
-      return largeIcons = false
-
-    } else {
-
-      $toggle.text('Default size')
-      $icon.attr('class', largeClass)
-      return largeIcons = true
-
-    }
-  })
-
-})
-</script>
 </body>
 </html>
