@@ -102,7 +102,7 @@ var gulp = require('gulp')
 var Svgpack = require('svgpack')
 
 gulp.task('default',function(){
-  return Svgpack('./svg/*.svg', {
+  Svgpack('./svg/*.svg', {
     // options...
   })
 })
@@ -113,7 +113,7 @@ gulp.task('default',function(){
 ```js
 {
   name: 'svgpack',   // icons name
-  prefix: 'icon',       // prefix for css classes
+  prefix: 'icon',    // prefix for css classes
   dist:'./svgpack',
   templates: {
     // templates path
