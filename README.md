@@ -99,11 +99,14 @@ if not use svg sprite.
 
 ```js
 var gulp = require('gulp')
+var mkdirp = require('mkdirp')
 var Svgpack = require('svgpack')
 
 gulp.task('default',function(){
+  mkdirp('./svgpack')
   Svgpack('./svg/*.svg', {
     // options...
+    dist: './svgpack',
   })
 })
 ```
