@@ -3,7 +3,7 @@
   <symbol id="<%= config.prefix %>-<%= icon.name %>" viewBox="<%= icon.viewBox %>">
     <g>
       <% _.each(icon.path, function(path) { %>
-      <path d="<%= path.d %>"/>
+      <path fill="<%= path.fill %>" stroke="<%= path.stroke %>" d="<%= path.d %>"/>
       <% }) %>
     </g>
   </symbol>

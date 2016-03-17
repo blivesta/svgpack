@@ -13,7 +13,8 @@ test('file check', function (t) {
       sprite:'./templates/svg/sprite.svg',
       css:'./templates/css/svgpack.css',
       html:'./templates/html/default.html',
-    }
+    },
+    svgoOptions:{}
   })
 
   var files = new glob.sync(path.resolve(Svgpack.options.dist + '/*'))
