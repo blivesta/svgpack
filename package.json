@@ -4,15 +4,6 @@
   "homepage": "https://github.com/blivesta/svgpack",
   "description": "Generator for SVG sprite and icons preview.",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:blivesta/svgpack.git"
-  },
-  "author": {
-    "name": "blivesta",
-    "url": "http://www.blivesta.com/"
-  },
-  "license": "MIT",
   "scripts": {
     "build": "node test/build.js",
     "lint": "eslint lib/svgpack.js",
@@ -21,23 +12,32 @@
     "test": "mocha -w -R spec"
   },
   "dependencies": {
-    "datauri": "^0.8.0",
-    "glob": "^5.0.15",
-    "html-to-json": "^0.5.1",
-    "lodash": "^3.10.1",
+    "cheerio": "^0.20.0",
+    "datauri": "^1.0.4",
+    "glob": "^7.0.3",
+    "html-to-json": "^0.6.0",
+    "lodash": "^4.9.0",
     "mkdirp": "^0.5.1",
-    "svgo": "^0.5.6"
+    "svgo": "^0.6.4"
   },
   "devDependencies": {
-    "http-server": "^0.8.5",
-    "sircus": "^2.0.0",
     "chai": "^3.5.0",
-    "cheerio": "^0.20.0",
     "eslint": "^2.5.3",
     "eslint-config-standard": "^5.1.0",
     "eslint-plugin-standard": "^1.3.2",
     "eslint-plugin-promise": "^1.1.0",
+    "http-server": "^0.9.0",
     "mocha": "^2.4.5",
-    "rimraf": "^2.5.2"
-  }
+    "rimraf": "^2.5.2",
+    "sircus": "^2.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:blivesta/svgpack.git"
+  },
+  "author": {
+    "name": "blivesta",
+    "url": "http://www.blivesta.com/"
+  },
+  "license": "MIT"
 }
