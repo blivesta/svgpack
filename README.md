@@ -33,9 +33,11 @@ $ npm install svgpack
 ```js
 var Svgpack = require('svgpack')
 
-Svgpack = new Svgpack('./svg/*.svg', {
+var svgpack = new Svgpack('./svg/*.svg', {
   // options...
 })
+
+svgpack.init()
 ```
 
 3.Call the `svgpack`.
@@ -125,7 +127,8 @@ gulp.task('default',function(){
     sprite:'./your-project/template/svg/sprite.svg',
     css:'./your-project/template/css/svgpack.css',
     html:'./your-project/template/html/default.html',
-  }
+  },
+  svgoOptions: {},
 }
 ```
 
