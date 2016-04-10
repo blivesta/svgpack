@@ -4,11 +4,7 @@ var settings = {
     name: 'svgpack',
     prefix: 'icon',
     dist: '',
-    templates: {
-      sprite: './templates/svg/sprite.svg',
-      css: './templates/css/svgpack.css',
-      html: './templates/html/default.html',
-    },
+    templates: {},
     svgoOptions: {},
   },
 }

@@ -1,9 +1,10 @@
-var path = require('path')
-var Glob = require('glob').sync
-var Svgpack = require('../lib/svgpack.js')
-var rimraf = require('rimraf')
 var expect = require('chai').expect
+var Glob = require('glob').sync
+var path = require('path')
+var rimraf = require('rimraf')
 var settings = require('./settings')
+var Svgpack = require('../lib/svgpack.js')
+
 var src = settings.src
 var options = settings.options
 options.dist = './test/temp'
