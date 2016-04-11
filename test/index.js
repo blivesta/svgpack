@@ -1,4 +1,4 @@
-var expect = require('chai').expect
+var assert = require('chai').assert
 var Glob = require('glob').sync
 var path = require('path')
 var rimraf = require('rimraf')
@@ -22,28 +22,28 @@ describe('SVGPack', function () {
   it('Check the "svgpack.json"', function (done) {
     var input = new Glob(path.resolve(src))
     var output = require(path.resolve(options.dist + '/' + options.name + '.json'))
-    expect(input.length).to.equal(Object.keys(output.icons).length)
+    assert.equal(input.length, Object.keys(output.icons).length)
     done()
   })
 
   it('Check the files of the "data" directory', function (done) {
     var input = new Glob(path.resolve(src))
     var output = new Glob(path.resolve(options.dist + '/data/*.json'))
-    expect(input.length).to.equal(output.length)
+    assert.equal(input.length, output.length)
     done()
   })
 
   it('Check the files of the "svg" directory', function (done) {
     var input = new Glob(path.resolve(src))
     var output = new Glob(path.resolve(options.dist + '/svg/*.svg'))
-    expect(input.length).to.equal(output.length)
+    assert.equal(input.length, output.length)
     done()
   })
 
   it('check svg sprite files', function (done) {
     var input = new Glob(path.resolve(src))
     var output = new Glob(path.resolve(options.dist + '/svg/*.svg'))
-    expect(input.length).to.equal(output.length)
+    assert.equal(input.length, output.length)
     done()
   })
 
@@ -57,7 +57,7 @@ describe('SVGPack', function () {
       path.resolve(options.dist + '/' + options.name + '.css'),
       path.resolve(options.dist + '/' + options.name + '.json'),
     ]
-    expect(files.length).to.equal(dest.length)
+    assert.equal(files.length, dest.length)
     done()
   })
 })
