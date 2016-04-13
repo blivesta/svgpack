@@ -6,8 +6,10 @@
 
 > Generator for SVG sprite and icons preview.
 
-## Example
-- [flexicon](https://github.com/blivesta/flexicon)
+## Demo
+- [Flexicon src](https://github.com/blivesta/flexicon)
+- [Flexicon dist](http://git.blivesta.com/flexicon/)
+
 
 
 ## Install
@@ -21,7 +23,6 @@ $ npm install svgpack
 
 1.Create SVG files.
 ```
-|-- svgpack.js
 |-- svg
     |-- icon1.svg
     |-- icon2.svg
@@ -42,14 +43,18 @@ svgpack.init()
 
 3.Call the `svgpack`.
 ```
-$ cd your-project
-$ node svgpack.js
+$ node input.js
 ```
 
 ### Result
 
 ```
 |-- input.js
+|-- svg
+    |-- icon1.svg
+    |-- icon2.svg
+    |-- icon3.svg
+    |-- icon4.svg
 |-- svgpack
     |-- index.html
     |-- svgpack.css
@@ -65,56 +70,9 @@ $ node svgpack.js
         |-- icon2.svg
         |-- icon3.svg
         |-- icon4.svg
-|-- svg
-    |-- icon1.svg
-    |-- icon2.svg
-    |-- icon3.svg
-    |-- icon4.svg
 ```
 
-### Markup example
-
-```html
-<head>
-  <link rel="stylesheet" href="svgpack.css">
-</head>
-<body>
-  <!-- svgpack-sprite.svg -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> <symbol id="icon-blivesta" viewBox="0 0 64 64"><g> <path d="M35.094 0l-15.97 15.965 15.97 15.963-16.037 16.037L35.094 64H64V0H35.094zm14.5 54.812l-8.07-8.062 8.07-8.066 8.062 8.066-8.062 8.062zm0-29.777l-8.07-8.062 8.07-8.064 8.062 8.06-8.062 8.06z"/> </g></symbol></svg>
-
-  <svg viewBox="0 0 64 64" class="icon"><use xlink:href="#icon-blivesta"></use></svg>
-
-</body>
-```
-
-if not use svg sprite.
-```html
-<head>
-  <link rel="stylesheet" href="svgpack.css">
-</head>
-<body>
-  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><path d="M35.094 0l-15.97 15.965 15.97 15.963-16.037 16.037L35.094 64H64V0H35.094zm14.5 54.812l-8.07-8.062 8.07-8.066 8.062 8.066-8.062 8.062zm0-29.777l-8.07-8.062 8.07-8.064 8.062 8.06-8.062 8.06z"/></svg>
-</body>
-```
-
-### if using gulp.
-
-```js
-var gulp = require('gulp')
-var mkdirp = require('mkdirp')
-var Svgpack = require('svgpack')
-
-gulp.task('default',function(){
-  mkdirp('./svgpack')
-  Svgpack('./svg/*.svg', {
-    // options...
-    dist: './svgpack',
-  })
-})
-```
-
-
-## Options
+### Options
 ```js
 {
   name: 'svgpack',   // icons name
@@ -130,6 +88,35 @@ gulp.task('default',function(){
   },
   svgoOptions: {},
 }
+```
+
+### if using on gulp.
+
+```js
+var gulp = require('gulp')
+var svgpack = require('svgpack')
+
+gulp.task('default', function () {
+  var svgpack = new svgpack('./svg/*.svg', {
+    // options
+  })
+  svgpack.init()
+})
+```
+
+## Markup example for SVG sprite.
+
+```html
+<head>
+  <link rel="stylesheet" href="svgpack.css">
+</head>
+<body>
+  <!-- svgpack-sprite.svg -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"> <symbol id="icon-blivesta" viewBox="0 0 64 64"><g> <path d="M35.094 0l-15.97 15.965 15.97 15.963-16.037 16.037L35.094 64H64V0H35.094zm14.5 54.812l-8.07-8.062 8.07-8.066 8.062 8.066-8.062 8.062zm0-29.777l-8.07-8.062 8.07-8.064 8.062 8.06-8.062 8.06z"/> </g></symbol></svg>
+
+  <svg viewBox="0 0 64 64" class="icon"><use xlink:href="#icon-blivesta"></use></svg>
+
+</body>
 ```
 
 ## Contributing
