@@ -1,5 +1,6 @@
-var Svgpack = require('../lib/svgpack.js')
 var settings = require('./settings')
+var Svgpack = require('../lib/svgpack.js')
+
 var src = settings.src
 var options = settings.options
 options.dist = './test/build'
