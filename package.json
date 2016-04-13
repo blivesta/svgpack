@@ -6,9 +6,10 @@
   "main": "index.js",
   "scripts": {
     "build": "node test/build.js",
+    "dev": "mocha -w -R spec",
     "lint": "eslint lib/svgpack.js",
-    "start": "npm run lint && npm run build && npm run test",
-    "test": "mocha -w -R spec"
+    "start": "npm run lint && npm run build && npm run dev",
+    "test": "mocha -R spec"
   },
   "dependencies": {
     "cheerio": "^0.20.0",
