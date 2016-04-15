@@ -18,6 +18,7 @@
     "html-to-json": "^0.6.0",
     "lodash": "^4.9.0",
     "mkdirp": "^0.5.1",
+    "object-assign": "^4.0.1",
     "svgo": "^0.6.4"
   },
   "devDependencies": {
