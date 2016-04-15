@@ -15,7 +15,7 @@ describe('SVGPack', function () {
     svgpack.init()
   })
 
-  after((cb) => {
+  after(function (cb) {
     rimraf(options.dist, cb)
   })
 
