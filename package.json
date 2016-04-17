@@ -4,11 +4,14 @@
   "homepage": "https://github.com/blivesta/svgpack",
   "description": "Generator for SVG sprite and icons preview.",
   "main": "index.js",
+  "bin": {
+    "svgpack": "bin/cli.js"
+  },
   "scripts": {
-    "build": "node test/build.js",
+    "cli": "svgpack test/fixtures/*.svg --dest ~build --name cli --prefix c --templateHtml test/templates/html/fixture.html --templateCss test/templates/css/fixture.css --templateSvgSprite test/templates/svg/fixture.svg",
     "dev": "mocha -w -R spec",
     "lint": "eslint lib/svgpack.js",
-    "start": "npm run lint && npm run build && npm run dev",
+    "start": "npm run lint && npm run cli && npm run dev",
     "test": "mocha -R spec"
   },
   "dependencies": {
@@ -17,6 +20,7 @@
     "glob": "^7.0.3",
     "html-to-json": "^0.6.0",
     "lodash": "^4.9.0",
+    "minimist": "^1.1.2",
     "mkdirp": "^0.5.1",
     "object-assign": "^4.0.1",
     "svgo": "^0.6.4"
