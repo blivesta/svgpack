@@ -1,11 +1,7 @@
 var settings = {
-  src: './test/fixtures/*.svg',
-  options: {
-    name: 'svgpack',
-    prefix: 'icon',
-    dist: '',
-    templates: {},
-    svgoOptions: {},
+  config: {
+    src: './test/fixtures/*.svg',
+    dest: '',
   },
 }
 

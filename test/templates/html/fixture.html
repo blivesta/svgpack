@@ -1,0 +1,18 @@
+<h1>fixture</h1>
+<%= svgInject %>
+<%= cssInject %>
+
+<p id="options-name"><%= options.name %></p>
+<p id="options-prefix"><%= options.prefix %></p>
+
+<%= icons[0].name %>
+
+<% _.each(icons, function(icon) { %>
+  <%= icon.name %>">
+  <%= options.prefix %>
+  <%= icon.viewBox %>
+  <% _.each(icon.path, function(path) { %>
+    <path d='<%= path.d %>'/>
+  <% }) %>
+  <%= icon.base64 %>
+<% }) %>
