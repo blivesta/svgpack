@@ -34,26 +34,26 @@ describe('options', function () {
 
   it('name', function (done) {
     var $ = html()
-    assert.equal(options.name, $('#options-name').text())
+    assert.equal(options.name, $('optionsName').text())
     done()
   })
 
   it('prefix', function (done) {
     var $ = html()
-    assert.equal(options.prefix, $('#options-prefix').text())
+    assert.equal(options.prefix, $('optionsPrefix').text())
     done()
   })
 
   it('template html', function (done) {
     var $ = html()
-    assert.equal('fixture', $('h1').text())
+    assert.equal(options.name, $('optionsName').text())
     done()
   })
 
   it('template css', function (done) {
     var content = readFileSync(path.resolve(dest + '/' + options.name + '.css'))
     var $ = cheerio.load(content)
-    assert.equal(options.prefix, $('fixture').text())
+    assert.equal(options.prefix, $('optionPrefix').text())
     done()
   })
 
