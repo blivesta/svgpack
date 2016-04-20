@@ -1,13 +1,11 @@
 var assert = require('chai').assert
 var cheerio = require('cheerio')
-var path = require('path')
 var readFileSync = require('../lib/read-file-sync')
 var rimraf = require('rimraf')
-var settings = require('./settings')
 var Svgpack = require('..')
 
-describe('options', function () {
-  var src = settings.config.src
+describe('options result', function () {
+  var src = './test/fixtures/*.svg'
   var dest = './test/options'
   var options = {
     name: 'foo',
@@ -28,7 +26,7 @@ describe('options', function () {
   })
 
   var html = function () {
-    var content = readFileSync(path.resolve(dest + '/index.html'))
+    var content = readFileSync(dest + '/index.html')
     return cheerio.load(content)
   }
 
@@ -44,21 +42,21 @@ describe('options', function () {
     done()
   })
 
-  it('template html', function (done) {
+  it('templates.html', function (done) {
     var $ = html()
     assert.equal(options.name, $('optionsName').text())
     done()
   })
 
-  it('template css', function (done) {
-    var content = readFileSync(path.resolve(dest + '/' + options.name + '.css'))
+  it('templates.css', function (done) {
+    var content = readFileSync(dest + '/' + options.name + '.css')
     var $ = cheerio.load(content)
     assert.equal(options.prefix, $('optionPrefix').text())
     done()
   })
 
-  it('template svg sprite', function (done) {
-    var content = readFileSync(path.resolve(dest + '/' + options.name + '-sprite.svg'))
+  it('templates.svgSprite', function (done) {
+    var content = readFileSync(dest + '/' + options.name + '-sprite.svg')
     var $ = cheerio.load(content)
     assert.equal('fixture', $('svg').attr('id'))
     done()
