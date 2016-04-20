@@ -34,7 +34,7 @@
     "mocha": "^2.4.5",
     "postcss": "^5.0.19",
     "rimraf": "^2.5.2",
-    "sircus": "^2.0.0"
+    "sircus": "^2.0.1"
   },
   "repository": {
     "type": "git",
