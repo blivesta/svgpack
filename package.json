@@ -8,7 +8,7 @@
     "svgpack": "bin/cli.js"
   },
   "scripts": {
-    "cli": "svgpack test/fixtures/*.svg --dest ~build --name cli --prefix c --templateHtml test/templates/html/fixture.html --templateCss test/templates/css/fixture.css --templateSvgSprite test/templates/svg/fixture.svg",
+    "cli": "svgpack test/fixtures/*.svg -d test/build -n cli -p sp -m test/templates/html/fixture.html -c test/templates/css/fixture.css -s test/templates/svg/fixture.svg",
     "dev": "mocha -w -R spec",
     "lint": "eslint lib/svgpack.js",
     "start": "npm run lint && npm run cli && npm run dev",

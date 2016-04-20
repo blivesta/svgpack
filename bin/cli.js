@@ -9,9 +9,9 @@ var argv = minimist(process.argv.slice(2), {
     d: 'dest',
     n: 'name',
     p: 'prefix',
-    h: 'templateHtml',
-    c: 'templateCss',
-    s: 'templateSvgSprite',
+    m: 'templatesHtml',
+    c: 'templatesCss',
+    s: 'templatesSprite',
     v: 'version',
   },
 })
@@ -33,16 +33,16 @@ if (argv.prefix) {
   options.prefix = argv.prefix
 }
 
-if (argv.templateHtml) {
-  options.templates.html = argv.templateHtml
+if (argv.templatesHtml) {
+  options.templates.html = argv.templatesHtml
 }
 
-if (argv.templateCss) {
-  options.templates.css = argv.templateCss
+if (argv.templatesCss) {
+  options.templates.css = argv.templatesCss
 }
 
-if (argv.templateSvgSprite) {
-  options.templates.sprite = argv.templateSvgSprite
+if (argv.templatesSprite) {
+  options.templates.sprite = argv.templatesSprite
 }
 
 if (argv.version) {
