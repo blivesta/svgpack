@@ -4,12 +4,11 @@
 [![Build Status](https://img.shields.io/travis/blivesta/svgpack/master.svg?style=flat-square)](https://travis-ci.org/blivesta/svgpack)
 
 
-> Generator for SVG sprite and icons preview.
+> SVG sprites and CSS and generate the HTML page.
 
 ## Demo
 - [Flexicon src](https://github.com/blivesta/flexicon)
 - [Flexicon dist](http://git.blivesta.com/flexicon/)
-
 
 
 ## Install
@@ -20,6 +19,63 @@ $ npm install svgpack
 
 
 ## Usage
+
+```js
+var Svgpack = require('svgpack')
+var src = './input/*.svg' // input files *You can also use glob pattern.
+var dest = './output' // output directory
+
+var svgpack = new Svgpack(src, dest)
+
+svgpack.init()
+```
+
+### Arguments:
+
+##### `svgpack(src, dest, options)`
+
+0. `src`: `'String'` | `[Array]`
+0. `dest`: `'String'`
+0. `options`: `{Object}` => `optional`
+
+
+### Options:
+
+```js
+{
+  name: 'svgpack',
+  prefix: 'icon', // prefix for css classes
+  templates: {
+    // default templates files ->
+    // https://github.com/blivesta/svgpack/tree/master/templates
+    sprite:'./your-project/svgpack-template/svg/sprite.svg',
+    css:'./your-project/svgpack-template/css/svgpack.css',
+    html:'./your-project/svgpack-template/html/default.html',
+  },
+  svgoOptions: {},
+}
+```
+
+
+## CLI
+
+### Usage:
+
+```
+$ svgpack [src] [-d dest] [-n name|-p prefix|-t htmlPath|-c cssPath|-s spritePath]
+```
+
+### Options:
+
+- `--dest`, `-d`
+- `--name`, `-n`
+- `--prefix`, `-p`
+- `--templateHtml`, `-t`
+- `--templateCss`, `-c`
+- `--templateSprite`, `-s`
+
+
+## Example
 
 1.Create SVG files.
 ```
@@ -33,12 +89,11 @@ $ npm install svgpack
 2.Create `input.js`
 ```js
 var Svgpack = require('svgpack')
-
-var svgpack = new Svgpack('./svg/*.svg', {
+var src = './svg/*.svg'
+var dest = './output'
+Svgpack = new Svgpack(src, dest, {
   // options...
-})
-
-svgpack.init()
+}).init()
 ```
 
 3.Call the `svgpack`.
@@ -46,7 +101,7 @@ svgpack.init()
 $ node input.js
 ```
 
-### Result
+### Result:
 
 ```
 |-- input.js
@@ -72,39 +127,8 @@ $ node input.js
         |-- icon4.svg
 ```
 
-### Options
-```js
-{
-  name: 'svgpack',   // icons name
-  prefix: 'icon',    // prefix for css classes
-  dist:'./svgpack',
-  templates: {
-    // templates path
-    // default templates files ->
-    // https://github.com/blivesta/svgpack/tree/master/templates
-    sprite:'./your-project/template/svg/sprite.svg',
-    css:'./your-project/template/css/svgpack.css',
-    html:'./your-project/template/html/default.html',
-  },
-  svgoOptions: {},
-}
-```
 
-### if using on gulp.
-
-```js
-var gulp = require('gulp')
-var svgpack = require('svgpack')
-
-gulp.task('default', function () {
-  var svgpack = new svgpack('./svg/*.svg', {
-    // options
-  })
-  svgpack.init()
-})
-```
-
-## Markup example for SVG sprite.
+## Markup example
 
 ```html
 <head>
@@ -118,6 +142,7 @@ gulp.task('default', function () {
 
 </body>
 ```
+
 
 ## Contributing
 
