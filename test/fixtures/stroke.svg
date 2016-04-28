@@ -2,7 +2,7 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="fixture-stroke" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-	 y="0px" width="64px" height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
-<path fill="none" stroke="#231815" stroke-width="2.7275" stroke-linecap="round" stroke-miterlimit="10" d="M56.44,49.406
-	C51.002,57.031,42.082,62,32,62C15.428,62,2,48.574,2,32C2,15.428,15.428,2,32,2c7.943,0,15.166,3.085,20.533,8.124"/>
+	 y="0px" width="32px" height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<path fill="none" stroke="#231815" stroke-width="1.2728" stroke-linecap="round" stroke-miterlimit="10" d="M28.701,24.123
+	C26.165,27.684,22.002,30,17.299,30c-7.732,0-14-6.266-14-14c0-7.732,6.268-14,14-14c3.707,0,7.078,1.439,9.581,3.792"/>
 </svg>
