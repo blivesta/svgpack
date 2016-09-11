@@ -5,12 +5,10 @@ var rimraf = require('rimraf')
 var Svgpack = require('..')
 var fileCheck = require('./file-check')
 
-describe('Result', function () {
+describe('second argument is string', function () {
   var src = './test/fixtures/*.svg'
-  var dest = './test/result'
-  var svgpack = new Svgpack(src, {
-    dest: dest
-  })
+  var dest = './test/second'
+  var svgpack = new Svgpack(src, dest)
 
   before(function () {
     svgpack.init()

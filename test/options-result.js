@@ -1,4 +1,8 @@
+var after = require('mocha').after
 var assert = require('chai').assert
+var before = require('mocha').before
+var describe = require('mocha').describe
+var it = require('mocha').it
 var cheerio = require('cheerio')
 var readFileSync = require('../lib/read-file-sync')
 var rimraf = require('rimraf')
@@ -9,16 +13,18 @@ describe('options result', function () {
   var dest = './test/options'
   var options = {
     name: 'foo',
+    dest: dest,
     prefix: 'bar',
     templates: {
       html: './test/templates/html/fixture.html',
       css: './test/templates/css/fixture.css',
-      sprite: './test/templates/svg/fixture.svg',
-    },
+      sprite: './test/templates/svg/fixture.svg'
+    }
   }
+  var svgpack = new Svgpack(src, options)
 
   before(function () {
-    Svgpack = new Svgpack(src, dest, options).init()
+    svgpack.init()
   })
 
   after(function (cb) {
