@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>sketch</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="sketch" fill="#000000">
+            <rect id="Rectangle" x="10" y="9" width="5" height="5"></rect>
+            <polygon id="Star" points="7.83088489 6.24632734 6.1669325 7.12111888 6.48471913 5.26828066 5.13855337 3.95609335 6.9989087 3.6857679 7.83088489 2 8.66286109 3.6857679 10.5232164 3.95609335 9.17705066 5.26828066 9.49483729 7.12111888"></polygon>
+            <circle id="Oval" cx="4.5" cy="11.5" r="2.5"></circle>
+        </g>
+    </g>
+</svg>
