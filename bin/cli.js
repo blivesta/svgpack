@@ -12,8 +12,8 @@ var argv = minimist(process.argv.slice(2), {
     m: 'templatesHtml',
     c: 'templatesCss',
     s: 'templatesSprite',
-    v: 'version',
-  },
+    v: 'version'
+  }
 })
 
 var src = argv._
@@ -49,4 +49,5 @@ if (argv.version) {
   console.log(pkg.version)
 }
 
-Svgpack = new Svgpack(src, dest, options).init()
+var svgpack = new Svgpack(src, dest, options)
+svgpack.init()
