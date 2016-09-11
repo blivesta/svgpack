@@ -15,7 +15,6 @@
     "test": "npm run lint && mocha -R spec"
   },
   "dependencies": {
-    "cheerio": "^0.20.0",
     "datauri": "^1.0.4",
     "glob": "^7.0.3",
     "html-to-json": "^0.6.0",
@@ -23,11 +22,12 @@
     "minimist": "^1.1.2",
     "mkdirp": "^0.5.1",
     "object-assign": "^4.0.1",
-    "svgo": "^0.6.4"
+    "svgo": "^0.7.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.4.5",
+    "cheerio": "^0.22.0",
+    "mocha": "^3.0.2",
     "postcss": "^5.0.19",
     "rimraf": "^2.5.2",
     "sircus": "^2.0.1",
