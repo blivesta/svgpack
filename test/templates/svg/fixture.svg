@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="fixture">
+<svg id="fixture">
   <% _.each(icons, function(icon) { %>
   <symbol id="<%= config.prefix %>-<%= icon.name %>" viewBox="<%= icon.viewBox %>">
     <g>
