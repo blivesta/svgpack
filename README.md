@@ -16,6 +16,11 @@
 ```
 $ npm install svgpack
 ```
+Or
+```
+$ npm install svgpack -g
+```
+
 
 
 ## Usage
@@ -23,19 +28,15 @@ $ npm install svgpack
 ```js
 var Svgpack = require('svgpack')
 var src = './input/*.svg' // input files *You can also use glob pattern.
-var dest = './output' // output directory
-
-var svgpack = new Svgpack(src, dest)
-
+var svgpack = new Svgpack(src)
 svgpack.init()
 ```
 
 ### Arguments:
 
-##### `svgpack(src, dest, options)`
+##### `svgpack(src, options)`
 
 0. `src`: `'String'` | `[Array]`
-0. `dest`: `'String'`
 0. `options`: `{Object}` => `optional`
 
 
@@ -44,6 +45,7 @@ svgpack.init()
 ```js
 {
   name: 'svgpack',
+  dest: './svgpack',
   prefix: 'icon', // prefix for css classes
   templates: {
     // default templates files ->
@@ -62,7 +64,7 @@ svgpack.init()
 ### Usage:
 
 ```
-$ svgpack [src] [-d dest] [-n name|-p prefix|-t htmlPath|-c cssPath|-s spritePath]
+$ svgpack [src] [ -d dest | -n name | -p prefix | -t htmlPath | -c cssPath | -s spritePath]
 ```
 
 ### Options:
@@ -91,9 +93,10 @@ $ svgpack [src] [-d dest] [-n name|-p prefix|-t htmlPath|-c cssPath|-s spritePat
 var Svgpack = require('svgpack')
 var src = './svg/*.svg'
 var dest = './output'
-Svgpack = new Svgpack(src, dest, {
+var svgpack = new Svgpack(src, {
   // options...
-}).init()
+})
+svgpack.init()
 ```
 
 3.Call the `svgpack`.
