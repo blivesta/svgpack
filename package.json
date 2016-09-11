@@ -9,9 +9,9 @@
   },
   "scripts": {
     "cli": "svgpack test/fixtures/*.svg -d test/build -n cli -p sp -m test/templates/html/fixture.html -c test/templates/css/fixture.css -s test/templates/svg/fixture.svg",
-    "dev": "npm run lint && mocha -w -R spec",
+    "dev": "mocha -w -R spec",
     "lint": "standard",
-    "start": "npm run lint && npm run cli && npm run dev",
+    "start": "npm run lint && npm run cli && npm run dev ",
     "test": "npm run lint && mocha -R spec"
   },
   "dependencies": {
