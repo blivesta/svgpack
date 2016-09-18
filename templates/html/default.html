@@ -161,16 +161,28 @@
             <input type="text" class="Input" value="<svg viewBox='<%= icon.viewBox %>' class='<%= options.prefix %>'><use xlink:href='#<%= options.prefix %>-<%= icon.name %>'></use></svg>">
           </p>
         </div>
+
         <div class="Grid-col t-width4of12">
           <p class="t-bold">SVG</p>
         </div>
         <div class="Grid-col t-width8of12">
           <p>
-            <input type="text"class="Input" value="<svg viewBox='<%= icon.viewBox %>' class='<%= options.prefix %> <%= options.prefix %>-<%= icon.name %>' viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/><% }) %></svg>">
+            <input type='text'class='Input' value='<svg viewBox="<%= icon.viewBox %>" class="<%= options.prefix %> <%= options.prefix %>-<%= icon.name %>" viewBox="<%= icon.viewBox %>"><% _.each(icon.path, function(path) { %><path d="<%= path.d %>"/><% }) %></svg>'>
           </p>
         </div>
+
         <div class="Grid-col t-width4of12">
-          <p class="t-bold">img</p>
+          <p class="t-bold">SVG</p>
+        </div>
+        <div class="Grid-col t-width8of12">
+          <p>
+            <input type='text'class='Input' value='<svg viewBox="<%= icon.viewBox %>" class="<%= options.prefix %> <%= options.prefix %>-<%= icon.name %>" viewBox="<%= icon.viewBox %>"><% _.each(icon.path, function(path) { %><path d="<%= path.d %>"/><% }) %></svg>'>
+          </p>
+        </div>
+
+        <% if (options.base64) { %>
+        <div class="Grid-col t-width4of12">
+          <p class="t-bold">base64: img</p>
         </div>
         <div class="Grid-col t-width8of12">
           <p>
@@ -185,6 +197,8 @@
             <input type="text"class="Input" value="url('<%= icon.base64 %>');">
           </p>
         </div>
+        <% } %>
+
       </div>
     </div>
 
