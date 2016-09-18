@@ -5,7 +5,7 @@
 
 > A tool for generating and managing SVG Sprites.
 
-## What it does
+## Features
 
 - Optimizes SVGs using SVGO
 - Generates SVG Sprites
@@ -16,7 +16,7 @@
 ## Things to Note
 
 SVGPack does not currently support `circle` and `ellipse` elements.  
-If your SVG file has `circle` and `ellipse` elements, you will need to convert these into 'path' elements.  
+If your SVG file has `circle` and `ellipse` elements, you will need to convert these into `path` elements.  
 You can use Illustrator's 'Make Compound Path' function to convert circles and ellipses into paths.
 
 
