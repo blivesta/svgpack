@@ -2,7 +2,7 @@
   "name": "svgpack",
   "version": "2.1.0",
   "homepage": "https://github.com/blivesta/svgpack",
-  "description": "SVG sprites and CSS and generate the HTML page.",
+  "description": "A tool for generating and managing SVG Sprites.",
   "main": "index.js",
   "bin": {
     "svgpack": "bin/cli.js"
