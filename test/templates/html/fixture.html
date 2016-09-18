@@ -1,17 +1,39 @@
+<h1>SVGPack Test</h1>
+
+<h2>svgInject</h2>
+<textarea id="svgInject" rows="10" cols="100">
 <%= svgInject %>
+</textarea>
+
+<h2>cssInject</h2>
+<textarea id="cssInject" rows="10" cols="100">
 <%= cssInject %>
+</textarea>
 
-<optionsName><%= options.name %></optionsName>
-<optionsPrefix><%= options.prefix %></optionsPrefix>
+<h2>Options</h2>
+<textarea id="cssInject" rows="10" cols="100">
+options.name = <%= options.name %>
+options.dest = <%= options.dest %>
+options.prefix = <%= options.prefix %>
+options.base64 = <%= options.base64 %>
+options.templates.html = <%= options.templates.html %>
+options.templates.css = <%= options.templates.css %>
+options.templates.sprite = <%= options.templates.sprite %>
+</textarea>
 
-<%= icons[0].name %>
+<h2>Icons</h2>
+<textarea id="icons" rows="10" cols="100">
 
 <% _.each(icons, function(icon) { %>
-  <%= icon.name %>">
-  <%= options.prefix %>
-  <%= icon.viewBox %>
-  <% _.each(icon.path, function(path) { %>
-    <path d='<%= path.d %>'/>
-  <% }) %>
-  <%= icon.base64 %>
+iconName: <%= icon.name %>
+viewBox: <%= icon.viewBox %>
+Path: <% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/><% }) %>
+<% if (options.base64) { %>base64: <%= icon.base64 %><% } %>
 <% }) %>
+</textarea>
+
+
+<div style="display: none;">
+<optionsName><%= options.name %></optionsName>
+<optionsPrefix><%= options.prefix %></optionsPrefix>
+</div>

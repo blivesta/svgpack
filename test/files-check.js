@@ -32,7 +32,7 @@ var fileCheck = function (src, options) {
   it('svgpack.css', function (done) {
     var content = readFileSync(options.dest + '/' + options.name + '.css')
     var className = postcss.parse(content).nodes[0].selector
-    assert.equal(className, '.icon')
+    assert.equal(className, '.' + options.prefix)
     done()
   })
 
