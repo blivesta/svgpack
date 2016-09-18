@@ -153,46 +153,37 @@
           </div>
         </div>
 
-        <div class="Grid-col t-width4of12">
-          <p class="t-bold">SVG Sprite &lt;use&gt;</p>
+        <div class="Grid-col t-width6of12">
+          <p class="t-fontSm t-bold">SVG Sprite &lt;use&gt;</p>
         </div>
-        <div class="Grid-col t-width8of12">
+        <div class="Grid-col t-width6of12">
           <p>
             <input type="text" class="Input" value="<svg viewBox='<%= icon.viewBox %>' class='<%= options.prefix %>'><use xlink:href='#<%= options.prefix %>-<%= icon.name %>'></use></svg>">
           </p>
         </div>
 
-        <div class="Grid-col t-width4of12">
-          <p class="t-bold">SVG</p>
+        <div class="Grid-col t-width6of12">
+          <p class="t-fontSm t-bold">SVG &lt;path&gt;</p>
         </div>
-        <div class="Grid-col t-width8of12">
-          <p>
-            <input type='text'class='Input' value='<svg viewBox="<%= icon.viewBox %>" class="<%= options.prefix %> <%= options.prefix %>-<%= icon.name %>" viewBox="<%= icon.viewBox %>"><% _.each(icon.path, function(path) { %><path d="<%= path.d %>"/><% }) %></svg>'>
-          </p>
-        </div>
-
-        <div class="Grid-col t-width4of12">
-          <p class="t-bold">SVG</p>
-        </div>
-        <div class="Grid-col t-width8of12">
+        <div class="Grid-col t-width6of12">
           <p>
             <input type='text'class='Input' value='<svg viewBox="<%= icon.viewBox %>" class="<%= options.prefix %> <%= options.prefix %>-<%= icon.name %>" viewBox="<%= icon.viewBox %>"><% _.each(icon.path, function(path) { %><path d="<%= path.d %>"/><% }) %></svg>'>
           </p>
         </div>
 
         <% if (options.base64) { %>
-        <div class="Grid-col t-width4of12">
-          <p class="t-bold">base64: img</p>
+        <div class="Grid-col t-width6of12">
+          <p class="t-fontSm t-bold">base64 &lt;img&gt;</p>
         </div>
-        <div class="Grid-col t-width8of12">
+        <div class="Grid-col t-width6of12">
           <p>
             <input type="text"class="Input" value="<img src='<%= icon.base64 %>'/>">
           </p>
         </div>
-        <div class="Grid-col t-width4of12">
-          <p class="t-bold">CSS background-image</p>
+        <div class="Grid-col t-width6of12">
+          <p class="t-fontSm t-bold">base64: CSS background-image</p>
         </div>
-        <div class="Grid-col t-width8of12">
+        <div class="Grid-col t-width6of12">
           <p>
             <input type="text"class="Input" value="url('<%= icon.base64 %>');">
           </p>
