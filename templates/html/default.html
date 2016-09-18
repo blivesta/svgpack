@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title><%= options.name %></title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" charset="utf-8">
   <link rel="stylesheet" href="https://unpkg.com/sircus@2.0.1/dist/sircus.min.css" charset="utf-8" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.0.6/remodal.min.css" charset="utf-8" />
@@ -14,7 +13,7 @@
     /* SVGPack default template style */
     body {
       counter-reset: card;
-      font-family: 'Roboto', sans-serif;
+      font-family: -apple-system, 'BlinkMacSystemFont', "Helvetica Neue", Helvetica, "Roboto", Arial, sans-serif;
     }
     a,
     .btn {
@@ -154,38 +153,43 @@
           </div>
         </div>
 
-        <div class="Grid-col t-width4of12">
-          <p class="t-bold">SVG Sprite &lt;use&gt;</p>
+        <div class="Grid-col t-width6of12">
+          <p class="t-fontSm t-bold">SVG Sprite &lt;use&gt;</p>
         </div>
-        <div class="Grid-col t-width8of12">
+        <div class="Grid-col t-width6of12">
           <p>
             <input type="text" class="Input" value="<svg viewBox='<%= icon.viewBox %>' class='<%= options.prefix %>'><use xlink:href='#<%= options.prefix %>-<%= icon.name %>'></use></svg>">
           </p>
         </div>
-        <div class="Grid-col t-width4of12">
-          <p class="t-bold">SVG</p>
+
+        <div class="Grid-col t-width6of12">
+          <p class="t-fontSm t-bold">SVG &lt;path&gt;</p>
         </div>
-        <div class="Grid-col t-width8of12">
+        <div class="Grid-col t-width6of12">
           <p>
-            <input type="text"class="Input" value="<svg viewBox='<%= icon.viewBox %>' class='<%= options.prefix %> <%= options.prefix %>-<%= icon.name %>' viewBox='<%= icon.viewBox %>' xmlns='http://www.w3.org/2000/svg'><% _.each(icon.path, function(path) { %><path d='<%= path.d %>'/><% }) %></svg>">
+            <input type='text'class='Input' value='<svg viewBox="<%= icon.viewBox %>" class="<%= options.prefix %> <%= options.prefix %>-<%= icon.name %>" viewBox="<%= icon.viewBox %>"><% _.each(icon.path, function(path) { %><path d="<%= path.d %>"/><% }) %></svg>'>
           </p>
         </div>
-        <div class="Grid-col t-width4of12">
-          <p class="t-bold">img</p>
+
+        <% if (options.base64) { %>
+        <div class="Grid-col t-width6of12">
+          <p class="t-fontSm t-bold">base64 &lt;img&gt;</p>
         </div>
-        <div class="Grid-col t-width8of12">
+        <div class="Grid-col t-width6of12">
           <p>
             <input type="text"class="Input" value="<img src='<%= icon.base64 %>'/>">
           </p>
         </div>
-        <div class="Grid-col t-width4of12">
-          <p class="t-bold">CSS background-image</p>
+        <div class="Grid-col t-width6of12">
+          <p class="t-fontSm t-bold">base64: CSS background-image</p>
         </div>
-        <div class="Grid-col t-width8of12">
+        <div class="Grid-col t-width6of12">
           <p>
             <input type="text"class="Input" value="url('<%= icon.base64 %>');">
           </p>
         </div>
+        <% } %>
+
       </div>
     </div>
 

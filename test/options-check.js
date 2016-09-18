@@ -1,32 +1,12 @@
 var assert = require('chai').assert
+var it = require('mocha').it
 var cheerio = require('cheerio')
+var path = require('path')
 var readFileSync = require('../lib/read-file-sync')
-var rimraf = require('rimraf')
-var Svgpack = require('..')
 
-describe('options result', function () {
-  var src = './test/fixtures/*.svg'
-  var dest = './test/options'
-  var options = {
-    name: 'foo',
-    prefix: 'bar',
-    templates: {
-      html: './test/templates/html/fixture.html',
-      css: './test/templates/css/fixture.css',
-      sprite: './test/templates/svg/fixture.svg',
-    },
-  }
-
-  before(function () {
-    Svgpack = new Svgpack(src, dest, options).init()
-  })
-
-  after(function (cb) {
-    rimraf(dest, cb)
-  })
-
+var optionsCheck = function (options) {
   var html = function () {
-    var content = readFileSync(dest + '/index.html')
+    var content = readFileSync(options.dest + '/index.html')
     return cheerio.load(content)
   }
 
@@ -49,16 +29,24 @@ describe('options result', function () {
   })
 
   it('templates.css', function (done) {
-    var content = readFileSync(dest + '/' + options.name + '.css')
+    var content = readFileSync(options.dest + '/' + options.name + '.css')
     var $ = cheerio.load(content)
     assert.equal(options.prefix, $('optionPrefix').text())
     done()
   })
 
   it('templates.svgSprite', function (done) {
-    var content = readFileSync(dest + '/' + options.name + '-sprite.svg')
+    var content = readFileSync(options.dest + '/' + options.name + '-sprite.svg')
     var $ = cheerio.load(content)
     assert.equal('fixture', $('svg').attr('id'))
     done()
   })
-})
+
+  it('base64', function (done) {
+    var deta = require(path.join(__dirname, '/../' + options.dest + '/' + options.name + '.json'))
+    assert.typeOf(deta.icons[0].base64, 'string')
+    done()
+  })
+}
+
+module.exports = optionsCheck

@@ -6,23 +6,23 @@ var Svgpack = require('..')
 
 var argv = minimist(process.argv.slice(2), {
   alias: {
+    b: 'base64',
     d: 'dest',
     n: 'name',
     p: 'prefix',
     m: 'templatesHtml',
     c: 'templatesCss',
     s: 'templatesSprite',
-    v: 'version',
-  },
+    v: 'version'
+  }
 })
 
 var src = argv._
-var dest = ''
 var options = {}
 options.templates = {}
 
 if (argv.dest) {
-  dest = argv.dest
+  options.dest = argv.dest
 }
 
 if (argv.name) {
@@ -31,6 +31,10 @@ if (argv.name) {
 
 if (argv.prefix) {
   options.prefix = argv.prefix
+}
+
+if (argv.base64) {
+  options.base64 = argv.base64
 }
 
 if (argv.templatesHtml) {
@@ -49,4 +53,5 @@ if (argv.version) {
   console.log(pkg.version)
 }
 
-Svgpack = new Svgpack(src, dest, options).init()
+var svgpack = new Svgpack(src, options)
+svgpack.init()
