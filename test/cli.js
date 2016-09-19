@@ -19,7 +19,7 @@ describe('CLI', function () {
     }
   }
   var cmd = [
-    'svgpack ',
+    'node ./bin/cli.js ',
     src,
     ' -d ' + options.dest + ' ',
     ' -n ' + options.name + ' ',
