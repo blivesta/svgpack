@@ -1,6 +1,6 @@
 {
   "name": "svgpack",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "homepage": "https://github.com/blivesta/svgpack",
   "description": "A tool for generating and managing SVG Sprites.",
   "main": "index.js",
