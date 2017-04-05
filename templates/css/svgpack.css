@@ -4,13 +4,8 @@
   margin-top: -0.2em;
   width: 1em;
   height: 1em;
-  vertical-align:middle;
-}
-
-.<%= prefix %>--2x,
-.<%= prefix %>--3x,
-.<%= prefix %>--4x {
-  margin-top: 0;
+  vertical-align: middle;
+  overflow: hidden;
 }
 
 .<%= prefix %>--2x {
