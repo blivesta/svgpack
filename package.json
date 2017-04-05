@@ -8,9 +8,9 @@
     "svgpack": "bin/cli.js"
   },
   "scripts": {
-    "dev": "mocha -w -R spec",
+    "develop": "mocha -w -R spec",
     "lint": "standard",
-    "start": "npm run lint && npm run dev ",
+    "start": "npm run lint && npm run develop",
     "test": "npm run lint && mocha -R spec"
   },
   "dependencies": {
