@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title><%= options.name %></title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" charset="utf-8">
@@ -123,7 +124,7 @@
 
       <div class="Grid Grid--middle">
         <div class="Grid-col t-widthFull">
-          <p class="">
+          <p>
             <svg viewBox="<%= icon.viewBox %>" class="<%= options.prefix %> <%= options.prefix %>--4x"><use xlink:href="#<%= options.prefix %>-<%= icon.name %>"></use></svg>
             <span class="t-fontLg"><%= icon.name %></span>
           </p>
@@ -176,7 +177,7 @@
         </div>
         <div class="Grid-col t-width6of12">
           <p>
-            <input type="text"class="Input" value="<img src='<%= icon.base64 %>'/>">
+            <input type="text"class="Input" value='<img src="<%= icon.base64 %>" />'>
           </p>
         </div>
         <div class="Grid-col t-width6of12">
@@ -184,7 +185,7 @@
         </div>
         <div class="Grid-col t-width6of12">
           <p>
-            <input type="text"class="Input" value="url('<%= icon.base64 %>');">
+            <input type="text"class="Input" value='url("<%= icon.base64 %>");'>
           </p>
         </div>
         <% } %>
