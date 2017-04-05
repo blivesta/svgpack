@@ -17,7 +17,7 @@
 
 SVGPack does not currently support `circle` and `ellipse` elements.  
 If your SVG file has `circle` and `ellipse` elements, you will need to convert these into `path` elements.  
-You can use Illustrator's 'Make Compound Path' function to convert circles and ellipses into paths.
+You can use Illustrator's `Make Compound Path (⌘ + 8)` function to convert circles and ellipses into paths.
 
 
 ## Generate with SVGPack
@@ -158,7 +158,7 @@ $ node input.js
 </head>
 <body>
   <!-- svgpack-sprite.svg -->
-  <svg style="display: none;">
+  <svg style="display: none;" aria-hidden="true">
     <symbol id="icon-star" viewBox="0 0 32 32">
       <path d="M16 4.588l2.833 8.719H28l-7.416 5.387 2.832 8.719L16 22.023l-7.417 5.389 2.833-8.719L4 13.307h9.167L16 4.588z"/>
     </symbol>
@@ -168,12 +168,12 @@ $ node input.js
   </svg>
 
   <a href="#">
-    <svg viewBox="0 0 64 64" class="icon"><use xlink:href="#icon-star"></use></svg>
+    <svg viewBox="0 0 64 64" class="icon" aria-hidden="true"><use xlink:href="#icon-star"></use></svg>
     Star
   </a>
 
   <a href="#">
-    <svg viewBox="0 0 64 64" class="icon"><use xlink:href="#icon-heart"></use></svg>
+    <svg viewBox="0 0 64 64" class="icon" aria-hidden="true"><use xlink:href="#icon-heart"></use></svg>
     Heart
   </a>
 
