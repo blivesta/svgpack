@@ -85,7 +85,7 @@ Svgpack(src, options)
 #### Usage:
 
 ```
-$ svgpack [src] [ -d dest | -n name | -p prefix | -t templateHtml | -c templateCss | -s templateSprite]
+$ svgpack [src] [ -d dest | -n name | -p prefix | -m templateHtml | -c templateCss | -s templateSprite]
 ```
 
 #### Options:
@@ -94,7 +94,7 @@ $ svgpack [src] [ -d dest | -n name | -p prefix | -t templateHtml | -c templateC
 - `--dest`, `-d`
 - `--prefix`, `-p`
 - `--base64`, `-b`
-- `--templateHtml`, `-t`
+- `--templateHtml`, `-m`
 - `--templateCss`, `-c`
 - `--templateSprite`, `-s`
 
